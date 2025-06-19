@@ -33,7 +33,7 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64
-          cache-from: type=registry,ref=lcamel/github-actions-cache-test:cache
-          cache-to: type=registry,ref=lcamel/github-actions-cache-test:cache,mode=max
+          cache-from: type=registry,ref=${{ env.REGISTRY }}/lcamel/github-actions-cache-test:cache
+          cache-to: type=registry,ref=${{ env.REGISTRY }}/lcamel/github-actions-cache-test:cache,mode=max
           tags: |
-            lcamel/github-actions-cache-test:latest
+            ${{ env.REGISTRY }}/lcamel/github-actions-cache-test:latest
