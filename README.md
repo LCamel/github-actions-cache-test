@@ -1,3 +1,3 @@
 # github-actions-cache-test
 
-test1
+test2
