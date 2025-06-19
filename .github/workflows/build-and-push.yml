@@ -37,3 +37,5 @@ jobs:
           cache-to: type=registry,ref=${{ env.REGISTRY }}/lcamel/github-actions-cache-test:cache,mode=max
           tags: |
             ${{ env.REGISTRY }}/lcamel/github-actions-cache-test:latest
+          build-args: |
+            BUILDKIT_INLINE_CACHE=1
