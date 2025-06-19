@@ -43,17 +43,14 @@ jobs:
           date >> home-vscode-stack/test.txt
           cat -n home-vscode-stack/test.txt 
 
-#      - uses: docker/build-push-action@v6
-#        with:
-#          context: .
-#          push: true
-#          platforms: linux/amd64
-#          cache-from: type=registry,ref=${{ env.REGISTRY }}/lcamel/github-actions-cache-test:cache
-#          cache-to: type=registry,ref=${{ env.REGISTRY }}/lcamel/github-actions-cache-test:cache,mode=max
-#          tags: |
-#            ${{ env.REGISTRY }}/lcamel/github-actions-cache-test:latest
-#          build-args: |
-#            BUILDKIT_INLINE_CACHE=1
-#          build-contexts: |
-#            home-vscode-stack=./home-vscode-stack
-#
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64
+          cache-from: type=gha
+          cache-to: type=gha:cache,mode=max
+          tags: |
+            ${{ env.REGISTRY }}/lcamel/github-actions-cache-test:latest
+          build-contexts: |
+            home-vscode-stack=./home-vscode-stack

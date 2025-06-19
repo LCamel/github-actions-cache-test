@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "==== $0"
-date > $HOME/work/`date +%s`
-grep . $HOME/work/*
+ls -l $HOME/.stack
+date > $HOME/.stack/`date +%s`
+grep . $HOME/.stack/* /dev/null
 echo "==== $0"
