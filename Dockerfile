@@ -1,4 +1,4 @@
-FROM FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
 
 COPY --chown=vscode:vscode . /workspaces/github-actions-cache-test
 WORKDIR                      /workspaces/github-actions-cache-test
